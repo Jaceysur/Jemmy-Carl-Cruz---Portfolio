@@ -4,52 +4,91 @@ const portfolioData = Object.freeze({
     course: "BSIT",
     yearLevel: "3rd Year College",
     email: "jemmycarl1@gmail.com",
-    phone: "09466305236",
+    phone: "+63 9466305236",
 
-    intro: "A student interested in web development, programming, databases, and practical systems that make everyday tasks easier, faster, and more organized.",
+    intro: "A BSIT student interested in application and web development, database management, system design, and practical systems that make everyday tasks easier, faster, and more organized.",
 
-    about: "I am a BSIT student who continues to improve my skills in web development, programming, database management, and system design. I enjoy creating simple but useful projects that solve real problems and help users complete tasks more efficiently.",
+    about: `I am a BSIT student who continuously improves my skills in application and web development, database management, and system design. I am interested in learning how technology can be used to create useful solutions.
+
+I enjoy creating simple but meaningful projects that solve real problems. Through these projects, I am able to practice my technical skills to better understand how systems can help users complete tasks more efficiently.
+
+As I continue my studies, I aim to become more skilled in developing reliable, organized, and user-friendly systems. My goal is to keep learning, improve my abilities, and prepare myself for future opportunities in the IT field.`,
 
     technicalSkills: [
         {
             name: "HTML",
+            category: "Front-End",
             logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
         },
         {
             name: "CSS",
+            category: "Front-End",
             logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
         },
         {
             name: "JavaScript",
+            category: "Front-End",
             logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
         },
         {
             name: "Bootstrap",
+            category: "Front-End",
             logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
         },
         {
             name: "PHP",
+            category: "Back-End",
             logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
         },
         {
-            name: "MySQL",
-            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-        },
-        {
             name: "C#",
+            category: "Back-End",
             logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
         },
         {
-            name: "SQL",
-            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqldeveloper/sqldeveloper-original.svg"
-        },
-        {
             name: "Java",
+            category: "Back-End",
             logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
         },
         {
             name: "Python",
+            category: "Back-End",
             logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        },
+        {
+            name: "MySQL",
+            category: "Database",
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+        },
+        {
+            name: "MongoDB",
+            category: "Database",
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+        },
+        {
+            name: "SQL",
+            category: "Database",
+            logo: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/database-fill.svg"
+        },
+        {
+            name: "Git",
+            category: "DevOps & Tools",
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+        },
+        {
+            name: "GitHub",
+            category: "DevOps & Tools",
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+        },
+        {
+            name: "Visual Studio",
+            category: "DevOps & Tools",
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg"
+        },
+        {
+            name: "MS Office",
+            category: "DevOps & Tools",
+            logo: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/file-earmark-text-fill.svg"
         }
     ],
 
@@ -64,11 +103,11 @@ const portfolioData = Object.freeze({
         },
         {
             name: "Problem Solving",
-            logo: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/lightbulb-fill.svg"
+            logo: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/puzzle-fill.svg"
         },
         {
-            name: "Time Management",
-            logo: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/clock-fill.svg"
+            name: "Critical Thinking",
+            logo: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/lightbulb-fill.svg"
         },
         {
             name: "Adaptability",
@@ -80,7 +119,7 @@ const portfolioData = Object.freeze({
         }
     ],
 
-    careerObjective: "My career objective is to continue improving my technical skills and become a competent IT professional who can develop reliable, user-friendly, and practical systems for real users and businesses.",
+    careerObjective: "My career objective is to continue improving my technical skills to become a competent IT professional who can develop reliable, user-friendly, and practical systems for real users and businesses.",
 
     socialLinks: [
         {
@@ -100,57 +139,11 @@ const portfolioData = Object.freeze({
         }
     ],
 
-    reflectionHighlights: [
-        {
-            title: "Key Learnings",
-            text: "HTML structure, CSS layout, JavaScript interactivity, and responsive design."
-        },
-        {
-            title: "Challenges",
-            text: "Organizing complete portfolio content without making the page feel crowded."
-        },
-        {
-            title: "Strategies",
-            text: "Used clear sections, reusable renderers, Bootstrap layout, and consistent spacing."
-        },
-        {
-            title: "Realization",
-            text: "A portfolio is both a course output and a professional presentation of growth."
-        }
-    ],
-
-        projects: [
-        {
-            category: "System Development",
-            title: "Computerized Sales and Inventory Management System for 4Sister Store",
-            description: "A system project designed to manage sales transactions, inventory records, product monitoring, and reports for a store. The goal is to reduce manual recording, minimize errors, and make business operations more organized.",
-            tools: [
-                {
-                    name: "C#",
-                    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
-                },
-                {
-                    name: "SQL",
-                    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqldeveloper/sqldeveloper-original.svg"
-                },
-                {
-                    name: "Visual Studio",
-                    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg"
-                },
-                {
-                    name: "Database",
-                    logo: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/database-fill.svg"
-                }
-            ],
-            repository: "https://github.com/Jaceysur/4Sister-Sales-and-Inventory-System-V3.git",
-            visualTitle: "Sales + Inventory",
-            visualTheme: "teal",
-            logo: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/boxes.svg"
-        },
+    projects: [
         {
             category: "Web Development",
             title: "Student Portfolio Website",
-            description: "A responsive portfolio website that presents the student's profile, background, skills, projects, reflection, and contact information using HTML, CSS, JavaScript, and Bootstrap.",
+            description: "A responsive portfolio website that presents the student's profile, background, skills, projects, reflection, and contact information using HTML, CSS, JavaScript, Bootstrap, Git, GitHub, and EmailJS.",
             tools: [
                 {
                     name: "HTML",
@@ -167,16 +160,26 @@ const portfolioData = Object.freeze({
                 {
                     name: "Bootstrap",
                     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                },
+                {
+                    name: "Git",
+                    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                },
+                {
+                    name: "GitHub",
+                    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                },
+                {
+                    name: "EmailJS",
+                    logo: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/envelope-fill.svg"
                 }
             ],
-            repository: "https://github.com/Jaceysur",
-            visualTitle: "Portfolio Website",
-            visualTheme: "coral",
-            logo: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/person-vcard.svg"
+            repository: "https://github.com/Jaceysur/Jemmy-Carl-Cruz---Portfolio.git",
+            image: "images/portfolio.jpg"
         },
         {
             category: "Web Development",
-            title: "Paw Portal Pet Adoption Website",
+            title: "Paw Portal - Pet Adoption Website",
             description: "A web-based pet adoption project designed to help users view available pets, learn adoption details, and connect with adoption-related services. The project focuses on making pet adoption information more accessible, organized, and user-friendly.",
             tools: [
                 {
@@ -198,12 +201,43 @@ const portfolioData = Object.freeze({
                 {
                     name: "MySQL",
                     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                },
+                {
+                    name: "Git",
+                    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                },
+                {
+                    name: "GitHub",
+                    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
                 }
             ],
             repository: "https://github.com/Shaaanny/Adoption.git",
-            visualTitle: "Pet Adoption",
-            visualTheme: "teal",
-            logo: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/heart-fill.svg"
+            image: "images/pawportal.jpeg"
+        },
+        {
+            category: "System Development",
+            title: "Computerized Sales and Inventory Management System for 4Sister Store",
+            description: "A system project designed to manage sales transactions, inventory records, product monitoring, and reports for a store. The goal is to reduce manual recording, minimize errors, and make business operations more organized.",
+            tools: [
+                {
+                    name: "C#",
+                    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+                },
+                {
+                    name: "SQL",
+                    logo: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/database-fill.svg"
+                },
+                {
+                    name: "Visual Studio",
+                    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg"
+                },
+                {
+                    name: "Database",
+                    logo: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/server.svg"
+                }
+            ],
+            repository: "https://github.com/Jaceysur/4Sister-Sales-and-Inventory-System-V3.git",
+            image: "images/4sisterstore.jpg"
         },
         {
             category: "System Development",
@@ -216,7 +250,7 @@ const portfolioData = Object.freeze({
                 },
                 {
                     name: "SQL",
-                    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqldeveloper/sqldeveloper-original.svg"
+                    logo: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/database-fill.svg"
                 },
                 {
                     name: "Visual Studio",
@@ -224,21 +258,19 @@ const portfolioData = Object.freeze({
                 },
                 {
                     name: "Database",
-                    logo: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/database-fill.svg"
+                    logo: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/server.svg"
                 }
             ],
             repository: "https://github.com/Jaceysur/School-Enrollment-System.git",
-            visualTitle: "Enrollment System",
-            visualTheme: "coral",
-            logo: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/mortarboard-fill.svg"
+            image: "images/schoolenrollment.jpg"
         }
     ],
 
-    reflection: `This Web Systems course helped me understand the importance of creating websites that are not only visually appealing but also organized, responsive, and easy to use. I learned how HTML gives structure to a webpage, how CSS improves layout and presentation, and how JavaScript adds interactivity. I also learned that using a framework such as Bootstrap can make development faster because it provides responsive layout tools and reusable components.
+    reflection: `This Web Systems course helped me understand the importance of creating websites that are not only visually appealing but also organized, responsive, and easy to use. I learned how HTML gives structure to a webpage, how CSS improves the layout and design, and how JavaScript adds interactivity. Aside from the topics in the handout, I also gained knowledge about PHP, which helps make a website more functional by allowing it to process forms, handle user input, connect to a database, and display dynamic content. This helped me better understand how websites work not only on the front end but also on the server side. I also learned that using a framework such as Bootstrap can make development faster because it provides responsive layout tools and reusable components.
 
-During the development of my portfolio, one challenge I encountered was organizing all the required information into clear sections. At first, it was difficult to decide how to present my profile, skills, projects, reflection, and contact details without making the website look crowded. Another challenge was making sure the website looked good on different screen sizes. To address these challenges, I used a simple layout, consistent spacing, responsive grid classes, and clean content cards.
+During the development of my portfolio, one challenge I encountered was organizing all the required information into clear sections. At first, it was difficult to decide how to present my profile, skills, projects, reflection, and contact details without making the website look crowded. Another challenge was making sure the website looked good on different screen sizes.
 
-I also realized that a portfolio is more than just a requirement. It can serve as a personal presentation of my progress, skills, and outputs as an IT student. Through this activity, I became more aware of the importance of clean code, consistent design, readable content, and user-friendly navigation. I learned that even a simple website can look professional if the layout, colors, typography, and content are properly planned.
+To address these challenges, I used a simple and organized layout by separating the information into clear sections such as profile, skills, projects, reflection, and contact details, so the website would not look crowded. I also applied consistent spacing, margins, and padding to make the content easier to read and more visually balanced. To make the design cleaner, I used content cards to group related information and make each part of the portfolio look structured. For responsiveness, I used responsive grid classes so the website could adjust properly on different screen sizes. I also kept the design simple by avoiding too many colors and unnecessary elements, allowing visitors to focus on the important information in my portfolio.
 
-Overall, this project helped me improve my confidence in building websites. It also reminded me that continuous practice is important in web development. The more I create and improve projects, the more I understand how to apply the lessons I learned in real situations.`
+I also realized that a portfolio is more than just a requirement. It can serve as a personal presentation of my progress, skills, and outputs as an IT student. Through this activity, I became more aware of the importance of clean code, consistent design, readable content, and user-friendly navigation. I learned that even a simple website can look professional if the layout, colors, typography, and content are properly planned.`
 });
