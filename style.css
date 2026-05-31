@@ -298,8 +298,7 @@ h1 span {
     margin-bottom: 34px;
 }
 
-.section-heading h2,
-.reflection-layout h2 {
+.section-heading h2 {
     font-size: clamp(2rem, 4vw, 3rem);
 }
 
@@ -652,10 +651,18 @@ h1 span {
 
 #reflection .section-heading h2,
 .reflection-layout h2 {
-    max-width: none;
-    white-space: nowrap;
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.08;
+    max-width: 100%;
+    white-space: normal;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.12;
+    word-break: normal;
+}
+
+@media (min-width: 1200px) {
+    #reflection .section-heading h2,
+    .reflection-layout h2 {
+        white-space: nowrap;
+    }
 }
 
 .reflection-highlights {
