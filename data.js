@@ -242,7 +242,7 @@ As I continue my studies, I aim to become more skilled in developing reliable, o
         {
             category: "System Development",
             title: "School Enrollment System",
-            description: "A system project designed to manage student enrollment records, student information, course details, and enrollment transactions. The goal is to make the enrollment process more organized, faster, and easier to manage.",
+            description: "A school enrollment system that helps organize student information, course details, and enrollment records for a faster and more manageable enrollment process.",
             tools: [
                 {
                     name: "C#",
