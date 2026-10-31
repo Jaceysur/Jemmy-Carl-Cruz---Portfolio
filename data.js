@@ -217,7 +217,7 @@ As I continue my studies, I aim to become more skilled in developing reliable, o
         {
             category: "System Development",
             title: "Computerized Sales and Inventory Management System for 4Sister Store",
-            description: "A system project designed to manage sales transactions, inventory records, product monitoring, and reports for a store. The goal is to reduce manual recording, minimize errors, and make business operations more organized.",
+            description: "A desktop-based system for managing sales transactions, product inventory, stock monitoring, and sales reports to help reduce manual work and keep store operations organized.",
             tools: [
                 {
                     name: "C#",
