@@ -180,7 +180,7 @@ As I continue my studies, I aim to become more skilled in developing reliable, o
         {
             category: "Web Development",
             title: "Paw Portal - Pet Adoption Website",
-            description: "A web-based pet adoption project designed to help users view available pets, learn adoption details, and connect with adoption-related services. The project focuses on making pet adoption information more accessible, organized, and user-friendly.",
+            description: "A user-friendly pet adoption website where visitors can explore available pets, learn about their adoption details, and find opportunities to give them a loving home.",
             tools: [
                 {
                     name: "HTML",
