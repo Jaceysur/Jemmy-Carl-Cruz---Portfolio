@@ -537,6 +537,7 @@
 
   function cancelOnUserAction(event) {
     if (!running || finished || !event.isTrusted) return;
+    if (event.type === "keydown" && event.key !== "Escape") return;
     finishBuild(false);
   }
 
