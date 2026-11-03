@@ -61,7 +61,8 @@
     "Ada", "Linus", "Grace", "Alan", "Margaret", "Ken",
     "Barbara", "Dennis", "Radia", "Guido", "Hedy", "Tim"
   ];
-  const CURSOR_COUNT = 7;
+  const CURSOR_COUNT = 28;
+  const AUTO_SCROLL_SPEED = 108;
 
   let canvas;
   let ctx;
@@ -215,16 +216,23 @@
     };
   }
 
+  function refreshTaskRects() {
+    // One layout read per task per frame keeps a larger cursor swarm smooth.
+    tasks.forEach((task) => {
+      const rect = task.element.getBoundingClientRect();
+      task.frameRect = {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height
+      };
+    });
+  }
+
   function visibleRect(task) {
-    const rect = task.element.getBoundingClientRect();
-    return {
-      left: rect.left,
-      top: rect.top,
-      right: rect.right,
-      bottom: rect.bottom,
-      width: rect.width,
-      height: rect.height
-    };
+    return task.frameRect || task.element.getBoundingClientRect();
   }
 
   function parentIsReady(task) {
@@ -235,8 +243,9 @@
     const rect = visibleRect(task);
     const h = window.innerHeight;
     const center = rect.top + Math.min(rect.height / 2, h * 0.22);
+    // Keep work in the central part of the screen without missing short elements.
     return rect.width > 2 && rect.height > 2 &&
-      center >= h * 0.34 && center <= h * 0.66;
+      center >= h * 0.15 && center <= h * 0.85;
   }
 
   function getNextTask() {
@@ -479,27 +488,16 @@
   }
 
   function scrollTowardNextTask(dt) {
-    // Keep the swarm working as a centered "stage": finish the current batch
-    // before moving the page, then bring the next item into the middle band.
-    if (agents.some((agent) => agent.task)) return;
+    // Continuous, frame-rate-independent downward scroll while there is still
+    // page content to build. The cursors keep working in parallel as the page moves.
+    const hasUnfinishedTasks = tasks.some((task) => !task.done);
+    if (!hasUnfinishedTasks) return;
 
-    const pending = tasks.find((task) =>
-      !task.done && !task.assigned && parentIsReady(task)
-    );
-    if (!pending) return;
+    const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    if (window.scrollY >= maxScroll - 1) return;
 
-    const rect = visibleRect(pending);
-    const h = window.innerHeight;
-    const topOffset = Math.min(rect.height / 2, h * 0.22);
-    const targetTop = h * 0.5 - topOffset;
-    const delta = rect.top - targetTop;
-    if (Math.abs(delta) < 14) return;
-
-    const maxScroll = Math.max(0, document.documentElement.scrollHeight - h);
-    const desiredScroll = clamp(window.scrollY + delta, 0, maxScroll);
-    const maxStep = 720 * dt;
-    const step = clamp(desiredScroll - window.scrollY, -maxStep, maxStep);
-    window.scrollTo(0, window.scrollY + step);
+    const nextY = Math.min(maxScroll, window.scrollY + AUTO_SCROLL_SPEED * dt);
+    window.scrollTo(0, nextY);
   }
 
   function cleanupStyles() {
@@ -544,11 +542,10 @@
 
   function addCancelListeners() {
     const cancelEvents = [
-      [window, "wheel"],
-      [window, "touchstart"],
-      [window, "pointerdown"],
-      [window, "keydown"]
-    ];
+      // A visitor can still skip the intro with Escape or click the fixed nav.
+      [window, "keydown"],
+      [document.querySelector(".portfolio-navbar"), "pointerdown"]
+    ].filter(([target]) => target);
     cancelEvents.forEach(([target, eventName]) => {
       const handler = cancelOnUserAction;
       target.addEventListener(eventName, handler, { passive: true, once: true });
@@ -562,6 +559,7 @@
     const dt = lastTime ? Math.min((now - lastTime) / 1000, 0.04) : 1 / 60;
     lastTime = now;
 
+    refreshTaskRects();
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
     agents.forEach((agent) => {
