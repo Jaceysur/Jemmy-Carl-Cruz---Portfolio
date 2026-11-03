@@ -49,7 +49,8 @@
     "#contact .simple-social-row",
     "#contact .simple-contact-form .floating-field",
     "#contact .simple-contact-form button",
-    "body > footer"
+    "body > footer",
+    "body h1, body h2, body h3, body h4, body p, body a, body span, body strong, body button, body label, body input, body textarea, body select, body img" 
   ];
 
   const COLORS = [
