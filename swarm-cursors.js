@@ -597,7 +597,7 @@
   window.addEventListener("DOMContentLoaded", () => {
     // Wait briefly for the portfolio's DOM renderers to populate project and
     // reflection content before measuring the page's build targets.
-    window.setTimeout(startBuild, 280);
+    window.requestAnimationFrame(startBuild);
   }, { once: true });
 
   motionPreference.addEventListener?.("change", (event) => {
