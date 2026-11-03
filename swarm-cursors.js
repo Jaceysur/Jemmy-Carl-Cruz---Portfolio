@@ -148,7 +148,17 @@
     const labelWidth = ctx.measureText(label).width + 12;
     ctx.fillStyle = cursor.color;
     ctx.beginPath();
-    ctx.roundRect(22, 20, labelWidth, 17, 5);
+    const lx = 22, ly = 20, lw = labelWidth, lh = 17, lr = 5;
+    ctx.moveTo(lx + lr, ly);
+    ctx.lineTo(lx + lw - lr, ly);
+    ctx.quadraticCurveTo(lx + lw, ly, lx + lw, ly + lr);
+    ctx.lineTo(lx + lw, ly + lh - lr);
+    ctx.quadraticCurveTo(lx + lw, ly + lh, lx + lw - lr, ly + lh);
+    ctx.lineTo(lx + lr, ly + lh);
+    ctx.quadraticCurveTo(lx, ly + lh, lx, ly + lh - lr);
+    ctx.lineTo(lx, ly + lr);
+    ctx.quadraticCurveTo(lx, ly, lx + lr, ly);
+    ctx.closePath();
     ctx.fill();
     ctx.fillStyle = "#fff";
     ctx.fillText(label, 28, 32);
