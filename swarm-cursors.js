@@ -172,6 +172,7 @@
     style.textContent = [
       "body.swarm-building { background:#fff !important; }",
       "body.swarm-building *:not(#portfolio-cursor-swarm) { visibility:hidden !important; }",
+      "body.swarm-building .portfolio-navbar, body.swarm-building .portfolio-navbar * { visibility:visible !important; }",
       "#portfolio-cursor-swarm { opacity:1; transition:opacity .45s ease; }",
       "#portfolio-cursor-swarm.swarm-fade { opacity:0; }"
     ].join("\n");
@@ -229,8 +230,10 @@
 
   function taskIsInReach(task) {
     const rect = visibleRect(task);
+    const h = window.innerHeight;
+    const center = rect.top + Math.min(rect.height / 2, h * 0.22);
     return rect.width > 2 && rect.height > 2 &&
-      rect.bottom > -90 && rect.top < window.innerHeight + 130;
+      center >= h * 0.34 && center <= h * 0.66;
   }
 
   function getNextTask() {
@@ -473,17 +476,27 @@
   }
 
   function scrollTowardNextTask(dt) {
+    // Keep the swarm working as a centered "stage": finish the current batch
+    // before moving the page, then bring the next item into the middle band.
+    if (agents.some((agent) => agent.task)) return;
+
     const pending = tasks.find((task) =>
       !task.done && !task.assigned && parentIsReady(task)
     );
     if (!pending) return;
 
     const rect = visibleRect(pending);
-    if (rect.top > window.innerHeight * 0.82) {
-      const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-      const nextY = Math.min(maxScroll, window.scrollY + Math.min(260 * dt, rect.top - window.innerHeight * 0.68));
-      window.scrollTo(0, nextY);
-    }
+    const h = window.innerHeight;
+    const topOffset = Math.min(rect.height / 2, h * 0.22);
+    const targetTop = h * 0.5 - topOffset;
+    const delta = rect.top - targetTop;
+    if (Math.abs(delta) < 14) return;
+
+    const maxScroll = Math.max(0, document.documentElement.scrollHeight - h);
+    const desiredScroll = clamp(window.scrollY + delta, 0, maxScroll);
+    const maxStep = 720 * dt;
+    const step = clamp(desiredScroll - window.scrollY, -maxStep, maxStep);
+    window.scrollTo(0, window.scrollY + step);
   }
 
   function cleanupStyles() {
