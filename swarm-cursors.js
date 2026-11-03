@@ -110,6 +110,9 @@
         if (unique.has(element)) return;
         unique.add(element);
 
+        // Fixed navigation stays visible at the top; it cannot be centered by scrolling.
+        if (element.closest(".portfolio-navbar")) return;
+
         const rect = element.getBoundingClientRect();
         if (rect.width < 3 || rect.height < 3) return;
 
